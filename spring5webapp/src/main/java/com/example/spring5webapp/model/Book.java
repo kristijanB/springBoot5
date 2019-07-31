@@ -1,4 +1,4 @@
-package com.example.spring5webapp.spring5webapp.model;
+package com.example.spring5webapp.model;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -13,7 +13,9 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
-    private String publicher;
+
+    @OneToOne
+    private Publisher publisher;
 
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
@@ -22,16 +24,16 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String isbn, String publicher) {
+    public Book(String title, String isbn, Publisher publisher) {
         this.title = title;
         this.isbn = isbn;
-        this.publicher = publicher;
+        this.publisher = publisher;
     }
 
-    public Book(String title, String isbn, String publicher, Set<Author> authors) {
+    public Book(String title, String isbn, Publisher publisher, Set<Author> authors) {
         this.title = title;
         this.isbn = isbn;
-        this.publicher = publicher;
+        this.publisher = publisher;
         this.authors = authors;
     }
 
@@ -59,12 +61,12 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public String getPublicher() {
-        return publicher;
+    public Publisher getPublicher() {
+        return publisher;
     }
 
-    public void setPublicher(String publicher) {
-        this.publicher = publicher;
+    public void setPublicher(Publisher publisher) {
+        this.publisher = publisher;
     }
 
     public Set<Author> getAuthors() {
@@ -94,7 +96,7 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", publicher='" + publicher + '\'' +
+                ", publicher='" + publisher + '\'' +
                 ", authors=" + authors +
                 '}';
     }
