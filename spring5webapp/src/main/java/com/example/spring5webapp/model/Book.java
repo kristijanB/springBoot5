@@ -61,11 +61,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Publisher getPublicher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublicher(Publisher publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 

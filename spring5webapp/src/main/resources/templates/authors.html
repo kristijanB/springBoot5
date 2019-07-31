@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring framework</title>
+</head>
+<body>
+<h1>Authors list</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+
+    <tr th:each="author:${authors}">
+        <td th:text="${author.id}">123</td>
+        <td th:text="${author.firstName}">Sprineg in action</td>
+        <td th:text="${author.lastName}">Wrox</td>
+    </tr>
+
+</table>
+</body>
+</html>
