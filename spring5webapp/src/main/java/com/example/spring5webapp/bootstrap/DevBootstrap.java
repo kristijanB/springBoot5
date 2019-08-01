@@ -20,7 +20,7 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
     public DevBootstrap(AuthorRepository authorRepository, BookRepository bookRepository, PublisherRepository publisherRepository) {
         this.authorRepository = authorRepository;
         this.bookRepository = bookRepository;
-        this.publisherRepository=publisherRepository;
+        this.publisherRepository = publisherRepository;
     }
 
     @Override
@@ -28,13 +28,13 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         initData();
     }
 
-    private void initData(){
-        Publisher publisher=new Publisher("Izdavac","Adresa");
+    private void initData() {
+        Publisher publisher = new Publisher("Izdavac", "Adresa");
         publisherRepository.save(publisher);
 
         //Eric
-        Author eric=new Author("Eric","Evans");
-        Book k1= new Book("Knjiga1", "1111", publisher);
+        Author eric = new Author("Eric", "Evans");
+        Book k1 = new Book("Knjiga1", "1111", publisher);
         eric.getBooks().add(k1);
         k1.getAuthors().add(eric);
 
@@ -42,10 +42,10 @@ public class DevBootstrap implements ApplicationListener<ContextRefreshedEvent> 
         bookRepository.save(k1);
 
         //Rob
-        Author rob=new Author("Rob","Jons");
-        Book k2= new Book("Knjiga2", "2222", publisher);
+        Author rob = new Author("Rob", "Jons");
+        Book k2 = new Book("Knjiga2", "2222", publisher);
         rob.getBooks().add(k2);
-        Publisher publisher2=new Publisher("Izdavac2", "adresa2");
+        Publisher publisher2 = new Publisher("Izdavac2", "adresa2");
 
         authorRepository.save(rob);
         bookRepository.save(k2);
