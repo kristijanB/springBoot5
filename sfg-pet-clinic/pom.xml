@@ -45,6 +45,6 @@
 	</build>
 	<scm>
 		<developerConnection>scm:git:git@github.com:kristijanB/springBoot5.git</developerConnection>
-	  <tag>sfg-pet-clinic-0.0.1</tag>
+	  <tag>1</tag>
   </scm>
 </project>
