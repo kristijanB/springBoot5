@@ -7,8 +7,10 @@ import com.dependencyInjectiondemo.controllers.SetterInjectedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"services", "com.dependencyInjectiondemo"})
 public class DependencyInjectionDemoApplication {
 
 	public static void main(String[] args) {

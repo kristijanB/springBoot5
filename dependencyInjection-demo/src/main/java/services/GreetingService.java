@@ -1,4 +1,4 @@
-package com.dependencyInjectiondemo.services;
+package services;
 
 public interface GreetingService {
     String sayGreeting();
