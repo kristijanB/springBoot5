@@ -1,0 +1,34 @@
+#comment
+name: John
+
+names: #comment
+  -Jhon
+  -Paul
+  -Ringo
+pound_sign: "#"
+
+
+book:
+  author: Joe Buck
+  publisher: random house
+
+truth: yes
+
+another_truth: True
+
+more_true: true
+
+false: no #no, false, FALSE
+
+string_val: "String val"
+
+include_new_line: | #za svaki razmak se dodaje nova linija
+  sadf asdf
+  asdfasdf
+  asdfasdf
+
+ignore_new_line: > #cita kao jedan string bez novih redova i razmaka
+  sadfasdf
+  asdfasdfasd
+  fasdf asdf
+
