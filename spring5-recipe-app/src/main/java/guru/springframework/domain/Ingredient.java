@@ -13,7 +13,8 @@ public class Ingredient {
     private BigDecimal amount;
 
     // TODO: 9.8.2019.
-    //private UnitOfMeasure umm;
+    @OneToOne(fetch = FetchType.EAGER)
+    private UnitOfMeasure umm;
 
     @ManyToOne
     private Recipe recipe;
@@ -48,5 +49,13 @@ public class Ingredient {
 
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
+    }
+
+    public UnitOfMeasure getUmm() {
+        return umm;
+    }
+
+    public void setUmm(UnitOfMeasure umm) {
+        this.umm = umm;
     }
 }
