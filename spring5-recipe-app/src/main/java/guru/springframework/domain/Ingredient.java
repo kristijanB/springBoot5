@@ -17,9 +17,10 @@ public class Ingredient {
     private String description;
     private BigDecimal amount;
 
+
     // TODO: 9.8.2019.
     @OneToOne(fetch = FetchType.EAGER)
-    private UnitOfMeasure umm;
+    private UnitOfMeasure uom;
 
     @ManyToOne
     private Recipe recipe;
@@ -30,13 +31,13 @@ public class Ingredient {
     public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom) {
         this.description = description;
         this.amount = amount;
-        this.umm = uom;
+        this.uom = uom;
     }
 
     public Ingredient(String description, BigDecimal amount, UnitOfMeasure uom, Recipe recipe) {
         this.description = description;
         this.amount = amount;
-        this.umm = uom;
+        this.uom = uom;
         this.recipe = recipe;
     }
 
